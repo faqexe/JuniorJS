@@ -7,11 +7,15 @@
 // Создать набор чаевых для каждого счета
 // Создать массив общих счетов (счет + чаевые - bill + tips)
 
-const calculateTips = (bill) => (bill < 20) ? (bill * 0.2) : (bill * 0.15);
+const calculateTips = (bill) => (bill < 20 ? bill * 0.2 : bill * 0.15);
 
 const bills = [11, 20, 47];
-const tips = [calculateTips(bills[0]), calculateTips(bills[1]), calculateTips(bills[2])];
+const tips = [
+  calculateTips(bills[0]),
+  calculateTips(bills[1]),
+  calculateTips(bills[2]),
+];
 
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
-console.log(bills, tips, total);  // [ 11, 20, 47 ] [ 2.2, 3, 7.05 ] [ 13.2, 23, 54.05 ]
+console.log(bills, tips, total); // [ 11, 20, 47 ] [ 2.2, 3, 7.05 ] [ 13.2, 23, 54.05 ]
