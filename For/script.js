@@ -14,8 +14,9 @@
 //    console.log('Hello!')
 // }
 
-// console.log('Out of loop');
+// console.log('Out of loop'); // выполнится, после for
 
+// ## Цикл и массивы
 // const user123 = ['YouRa', 'Allakhverdov', 1974, 'developer', ['Irina', 'Michael'], false];
 
 // const types = [];
@@ -23,13 +24,14 @@
 // for(let i = 0; i < user123.length; i++) {
 //    console.log(user123[i], typeof user123[i]);
 
-//    // types[i] = typeof user123[i];
-//    // types.push(typeof user123[i]);
-//    types.unshift(typeof user123[i]);
+   // types[i] = typeof user123[i]; // заполнение нового массива типами элементов другого
+   // types.push(typeof user123[i]);  // применение метода push
+//    types.unshift(typeof user123[i]); // элементы вставляются в обратном порядке
 // }
 
 // console.log(types);
 
+// ## Вычисляем возраст при помощи цикла
 // const birthYears = [1974, 1994, 2000, 2003];
 // const ages = [];
 
@@ -48,7 +50,7 @@ const user123 = ['YouRa', 'Allakhverdov', 1974, 'developer', ['Irina', 'Michael'
 console.log('CONTINUE EXAMPLE');
 
 for(let i = 0; i < user123.length; i++) {
-   if (typeof user123[i] !== 'string') continue;
+   if (typeof user123[i] !== 'string') continue; // пропускает все, что не является строкой
 
    console.log(user123[i], typeof user123[i]);
 }
@@ -56,7 +58,7 @@ for(let i = 0; i < user123.length; i++) {
 console.log('BREAK EXAMPLE');
 
 for(let i = 0; i < user123.length; i++) {
-   if (typeof user123[i] === 'number') break;
+   if (typeof user123[i] === 'number') break; // завершается как только встречается число
 
    console.log(user123[i], typeof user123[i]);
 }
