@@ -1,6 +1,7 @@
 'use strict';
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+console.log(secretNumber);
 let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -36,6 +37,13 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-document.querySelector('.again').addEventListener('click', function() {
-  location.reload();
-})
+document.querySelector('.again').addEventListener('click', function () {
+  document.querySelector('.score').textContent = 20;
+  document.querySelector('.guess-message').textContent = 'Начни угадывать!';
+  document.querySelector('.number-input').value = '';
+  document.querySelector('body').style.backgroundColor = 'rgb(0, 0, 0)';
+  document.querySelector('.question').style.width = '25rem';
+  document.querySelector('.question').textContent = '???';
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  console.log(secretNumber);
+});
