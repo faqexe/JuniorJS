@@ -12,15 +12,28 @@ const current1Element = document.querySelector('#current--1');
 const player0Element = document.querySelector('.player--0');
 const player1Element = document.querySelector('.player--1');
 
-//* Начальные настройки игры
-score0Element.textContent = 0;
-score1Element.textContent = 0;
-diceElement.classList.add('hidden');
+let totalScore, currentScore, activePlayer, isPlaying;
 
-const totalScore = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let isPlaying = true;
+//* Начальные настройки игры
+const initGame = function () {
+  totalScore = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  isPlaying = true;
+
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  current0Element.textContent = 0;
+  current1Element.textContent = 0;
+  player0Element.classList.remove('player--winner');
+  player1Element.classList.remove('player--winner');
+  player0Element.classList.remove('player--active');
+  player1Element.classList.remove('player--active');
+  player0Element.classList.add('player--active');
+  diceElement.classList.add('hidden');
+};
+
+initGame();
 
 const switchActivePlayer = function () {
   currentScore = 0;
@@ -64,7 +77,7 @@ btnHold.addEventListener('click', function () {
 
     //TODO Если общий счет >= 100 - Игрок выиграл
     //TODO Если общий счет < 100 - Переключить на другого игрока
-    if (totalScore[activePlayer] >= 20) {
+    if (totalScore[activePlayer] >= 100) {
       isPlaying = false;
       diceElement.classList.add('hidden');
       document
@@ -78,3 +91,6 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
+
+//* Новая игра
+btnNew.addEventListener('click', initGame);
