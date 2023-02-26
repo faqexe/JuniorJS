@@ -776,15 +776,15 @@ document.querySelector('button').addEventListener('click', function () {
 // team1 > team2 && console.log(`${game.team2} is more likely to win.`);
 
 /////////////////////////////////////////////////
-// Nullish Coalescing
+// Nullish Coalescing (Оператор нулевого слияния)
 
 // japaneseRestaurant.guestsNumber = 0;
 // const guests = japaneseRestaurant.guestsNumber || 5;
-// console.log(guests);
+// console.log(guests); // 5
 
 // // Nullish values: null and undefined (NOT 0 or '')
 // const guests1 = japaneseRestaurant.guestsNumber ?? 5;
-// console.log(guests1);
+// console.log(guests1);  // 0
 
 /////////////////////////////////////////////////
 // Short-circuit evaluation (||) (&&)
@@ -820,29 +820,31 @@ document.querySelector('button').addEventListener('click', function () {
 
 /////////////////////////////////////////////////
 // Rest (...) pattern
+// Используется для сбора оставшихся элементов
 
-// // 1. Rest pattern with destructuring
+// // 1. Rest для диструктуризации
 
-// // Rest pattern with arrays
+// // Rest для массивов
 
-// // This is spread operator, because ... are on the right side of =
+// // Это Spread, потому что ... находятся справа от =
 // const arr = [1, 2, ...[3, 4]];
 
-// // This is rest pattern, because ... are on the left side of =
+// // Это rest, потому что ... находятся слева от =
 // const [a1, a2, ...items] = [1, 2, 3, 4];
-// console.log(a1, a2, items);
+// console.log(a1, a2, items);  // 1 2 [3, 4]
 
+// Применение rest и spread сразу
 // const [seaweed, , edamame, ...otherFood] = [
 //   ...japaneseRestaurant.appetizers,
 //   ...japaneseRestaurant.mainMenu,
 // ];
-// console.log(seaweed, edamame, otherFood);
+// console.log(seaweed, edamame, otherFood);  // Seaweed salad Edamame ['Sushi rice', 'Sushi', 'Ramen', 'Tempura']
 
-// // Rest pattern with objects
+// // Rest для объектов
 // const { sun, sat, ...weekdays } = japaneseRestaurant.workingHours;
 // console.log(sun, sat, weekdays);
 
-// // 2. Rest pattern with functions
+// // 2. Rest для функций
 // const sum = function (...nums) {
 //   let sum = 0;
 //   for (let i = 0; i < nums.length; i++) {
@@ -851,12 +853,11 @@ document.querySelector('button').addEventListener('click', function () {
 //   console.log(sum);
 // };
 
-// sum(2, 5);
-// sum(1, 4, 7, 3);
+// sum(2, 5); // 7
+// sum(1, 4, 7, 3); // 15
 
 // const numbers = [3, 44, 2];
-
-// sum(...numbers);
+// sum(...numbers); // 49
 
 // japaneseRestaurant.orderRamen('Colored Noodle', 'Meat', 'Chicken', 'Onion');
 
@@ -867,11 +868,11 @@ document.querySelector('button').addEventListener('click', function () {
 
 // const arr = [1, 3, 5];
 
-// // Old bad approach
+// // Старый подход
 // const newArr = [7, 9, arr[0], arr[1], arr[2]];
 // console.log(newArr);
 
-// // New approach with spread operator
+// // Новый подход с оператором Spread
 // const newArrSpread = [7, 9, ...arr];
 // console.log(newArrSpread);
 // console.log(...newArrSpread);
@@ -880,16 +881,16 @@ document.querySelector('button').addEventListener('click', function () {
 // const newMenu = [...japaneseRestaurant.mainMenu, 'Miso Salmon'];
 // console.log(newMenu);
 
-// // Array copying
+// // Копия массива
 // const categoriesCopy = [...japaneseRestaurant.categories];
 
-// // Merge arrays
+// // Слияние массивов
 // const menu = [...japaneseRestaurant.appetizers, ...japaneseRestaurant.mainMenu];
 // console.log(menu);
 
 // // Iterable - arrays, strings, maps, sets. OBJECTS AREN'T ITERABLE.
 
-// // Spread operator with strings
+// // Spread со строками
 // const greeting = 'Hey';
 // const greetingLetters = [...greeting, '!'];
 // console.log(greetingLetters);
@@ -907,7 +908,7 @@ document.querySelector('button').addEventListener('click', function () {
 
 // japaneseRestaurant.orderSushi(...ingridients);
 
-// Objects
+// Объекты
 
 // const newJapaneseRestaurant = {
 //   foundationDate: 2011,
@@ -922,7 +923,7 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(japaneseRestaurant.name);
 
 /////////////////////////////////////////////////
-// Destructuring Objects
+// Деструктурирование объектов
 
 // japaneseRestaurant.foodDelivery({
 //   deliveryTime: '12:30',
@@ -938,11 +939,11 @@ document.querySelector('button').addEventListener('click', function () {
 // const { workingHours: hours, name: restName, categories } = japaneseRestaurant;
 // console.log(hours, restName, categories);
 
-// // Default values
+// // Значения по умолчанию
 // const { menu = [], appetizers: starterMenu = [] } = japaneseRestaurant;
 // console.log(menu, starterMenu);
 
-// // Mutating variables
+// // Переназначение значений переменных
 // let x = 3;
 // let y = 5;
 // const obj = { x: 11, y: 22, z: 33 };
@@ -957,7 +958,7 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(openHours, closeHours);
 
 ////////////////////////////////////////////////
-// Destructuring Arrays
+// Деструктурирование массивов
 
 // const arr = [3, 5, 7];
 // const x1 = arr[0];
