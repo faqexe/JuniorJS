@@ -660,7 +660,7 @@ document.querySelector('button').addEventListener('click', function () {
 // }
 
 ////////////////////////////////////////////////
-// for of loop
+// Цикл FOR OF
 
 // const menu = [...japaneseRestaurant.appetizers, ...japaneseRestaurant.mainMenu];
 
@@ -668,10 +668,14 @@ document.querySelector('button').addEventListener('click', function () {
 //   console.log(food);
 // }
 
+// Данный цикл поддерживает операторы break и continue
+
+// Получение индексов
 // for (const food of menu.entries()) {
 //   console.log(`${food[0] + 1}. ${food[1]}`);
 // }
 
+// Получение индексов через деструктуризацию
 // for (const [index, food] of menu.entries()) {
 //   console.log(`${index + 1}. ${food}`);
 // }
