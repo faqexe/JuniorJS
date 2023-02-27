@@ -39,6 +39,8 @@ const game = {
   },
 };
 
+//* Task 1
+
 //TODO Создать отдельные массивы с игроками для каждой команды (переменные players1 и players2)
 const players1 = [...game.players[0]];
 const players2 = [...game.players[1]];
@@ -62,7 +64,14 @@ console.log(allPlayers);
 //TODO REAL MADRID (team1) использовал 5 запасных игроков во время игры.
 //TODO Создайте новый массив (players1Total), содержащий всех оригинальных игроков team1,
 //TODO а также добавить тех, кто пришел на замену 'Marcelo', 'Isco', 'Asensio', 'Diaz' и 'Odriozola'.
-const players1Total = [...game.players[0], 'Marcelo', 'Isco', 'Asensio', 'Diaz', 'Odriozola'];
+const players1Total = [
+  ...game.players[0],
+  'Marcelo',
+  'Isco',
+  'Asensio',
+  'Diaz',
+  'Odriozola',
+];
 console.log(players1Total);
 // const players1Total = [...players1, 'Marcelo', 'Isco', 'Asensio', 'Diaz', 'Odriozola'];
 
@@ -76,10 +85,10 @@ console.log(team1, draw, team2);
 //TODO с общим количеством забитых голов (количество имен игроков, переданных в функцию).
 //? Тестовые данные: Сначала используйте игроков 'Mingueza', 'Messi', 'Modrich' и 'Nacho'.
 //? Затем снова вызовите функцию с игроками, используя game.scored.
-const printGoals = function(...players) {
+const printGoals = function (...players) {
   let goal = players.length;
   console.log(players, goal);
-}
+};
 printGoals('Mingueza', 'Messi', 'Modrich', 'Nacho');
 printGoals(...game.scored);
 
@@ -88,3 +97,65 @@ printGoals(...game.scored);
 //TODO БЕЗ использования оператора if / else или тернарного оператора.
 team1 > team2 && console.log(`${game.team1} win`);
 team1 < team2 && console.log(`${game.team2} win`);
+
+//* Task 2
+console.log(`///Task 2///`);
+//TODO Перебрать массив game.scored, вывести имя каждого игрока вместе с номером гола
+//TODO (например, “Goal 1 - Kroos”)
+let countGoal = 0;
+for (let player of game.scored) {
+  countGoal += 1;
+  console.log(`Goal ${countGoal} - ${player}`);
+}
+
+// for (const [index, name] of game.scored.entries()) {
+//   // console.log(entry);
+//   console.log(`Goal ${index + 1} - ${name}`);
+// }
+
+//TODO Используйте цикл для вычисления среднего коэффициента и выведите его в консоль
+const odds = Object.values(game.odds);
+const averageValue = odds.reduce((a, b) => a + b, 0) / odds.length;
+console.log(averageValue);
+
+// let oddSum = 0;
+// let odds = Object.values(game.odds);
+// for (const odd of odds) {
+//   oddSum += odd;
+// }
+// // console.log(oddSum);
+// // console.log(odds);
+
+// const averageOdd = oddSum / odds.length;
+// console.log(averageOdd);
+
+//TODO Вывести в консоль 3 коэффициента в формате:
+//? Rate for REAL MADRID victory: 1.48
+//? Rate for draw: 2.53
+//? Rate for BARCELONA victory: 4.25
+//TODO Получить название команд из игрового объекта, не вводить вручную
+console.log(`Rate for ${game.team1} victory: ${odds[0]}`);
+console.log(`Rate for ${Object.keys(game.odds)[1]} victory: ${odds[0]}`);
+console.log(`Rate for ${game.team2} victory: ${odds[2]}`);
+
+// for (const [teamName, odd] of Object.entries(game.odds)) {
+//   console.log(teamName, odd);
+//   const mutableText =
+// teamName === 'draw' ? 'draw' : `${game[teamName]} victory`;
+//   console.log(`Rate for ${mutableText}: ${odd}`);
+// }
+
+//TODO Создать объект под названием goalScorers, который содержит имена игроков,
+//TODO забивших гол, в качестве свойств и количество голов в качестве значения.
+//TODO В этой игре он будет выглядеть следующим образом:
+// {
+//   Kroos: 1,
+//   Benzema: 1,
+//   Mingueza: 1
+// }
+
+let goalScorers = {};
+for (let player of game.scored) {
+  goalScorers[player] ? goalScorers[player]++ : (goalScorers[player] = 1);
+}
+console.log(goalScorers);
