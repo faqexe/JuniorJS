@@ -603,7 +603,9 @@ document.querySelector('button').addEventListener('click', function () {
 // }
 
 ////////////////////////////////////////////////
-// Optional chaining (?.)
+// Optional chaining (?.) - Опциональная последовательность (цепочка)
+// Проверяет существует ли свойство, которое стоит слева
+// При отсутствии свойства или его значении null возвращает undefined
 
 // if (japaneseRestaurant.workingHours && japaneseRestaurant.workingHours.thu) {
 //   console.log(japaneseRestaurant.workingHours.thu.open);
@@ -628,7 +630,7 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(japaneseRestaurant.order?.(1, 2) ?? 'Method does not exist');
 
 // // Arrays
-
+// Проверка существования элемента внутри массива
 // const posts = [
 //   {
 //     name: 'JS is cool!',
@@ -646,6 +648,7 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(posts[2]?.name ?? 'This post does not exist');
 
 // // Check if the array is empty
+// Проверка пустой массив или нет
 // console.log(posts[0]?.name ?? 'The array is empty');
 // console.log(users[0]?.name ?? 'The array is empty');
 
