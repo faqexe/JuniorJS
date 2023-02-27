@@ -573,9 +573,16 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(goalScorers);
 
 ////////////////////////////////////////////////
-// for of loop with objects
+// Циклы и объекты
 
 // // Property names
+// Перебор ключей
+
+// Метод Object.keys() возвращает массив из собственных перечисляемых
+// свойств переданного объекта, в том же порядке, в котором они бы
+// обходились циклом for...in (разница между циклом и методом в том,
+// что цикл перечисляет свойства и из цепочки прототипов).
+
 // const props = Object.keys(workingHours);
 // console.log(props);
 // console.log(`"Banzai" opens ${props.length} days in a week.`);
@@ -585,10 +592,26 @@ document.querySelector('button').addEventListener('click', function () {
 // }
 
 // // Property values
+// Перебор значений
+
+// Метод Object.values() возвращает массив значений перечисляемых
+// свойств объекта в том же порядке что и цикл for...in.
+// Разница между циклом и методом в том, что цикл перечисляет свойства
+//и из цепочки прототипов.
+
 // const values = Object.values(workingHours);
 // console.log(values);
 
-// // Propetry names and values
+// // Property names and values
+// Перебор ключей и значений
+
+// Object.entries() метод возвращает массив собственных перечисляемых свойств
+// указанного объекта в формате [key, value], в том же порядке, что и в цикле for...in
+// (разница в том, что for-in перечисляет свойства из цепочки прототипов).
+// Порядок элементов в массиве который возвращается Object.entries() не зависит от того как объект объявлен.
+// Если существует необходимость в определённом порядке, то массив должен быть отсортирован до вызова метода,
+// например Object.entries(obj).sort((a, b) => a[0] - b[0]);.
+
 // const entries = Object.entries(workingHours);
 // console.log(entries);
 
