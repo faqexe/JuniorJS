@@ -619,6 +619,7 @@ document.querySelector('button').addEventListener('click', function () {
 //   console.log(entry);
 // }
 
+// Разделение ключей и значений через деструктуризацию
 // for (const [day, { open, close }] of entries) {
 //   console.log(
 //     `Restaurant "Banzai" on ${day} opens at ${open} and closes at ${close}`
