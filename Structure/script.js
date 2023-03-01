@@ -429,6 +429,10 @@ document.querySelector('button').addEventListener('click', function () {
 ////////////////////////////////////////////////
 // Set
 
+// Никогда не может иметь дублирующихся, одинаковых значений
+
+// Синтаксис - new Set()
+
 // const orders = new Set([
 //   'Sushi',
 //   'Ramen',
@@ -438,24 +442,29 @@ document.querySelector('button').addEventListener('click', function () {
 //   'Sushi',
 // ]);
 
-// console.log(orders);
+// console.log(orders); // {'Sushi, 'Ramen', 'Tempura'}
 
-// console.log(new Set('Hello!'));
-// console.log(new Set());
-// console.log(orders.size);
-// console.log(orders.has('Sushi'));
-// console.log(orders.has('Pizza'));
-// orders.add('Edamame');
-// orders.add('Edamame');
-// orders.delete('Tempura');
-// // orders.clear();
-// console.log(orders);
+// console.log(new Set('Hello!'));  // {'H', 'e', 'l', 'o', '!'}
+// console.log(new Set());  // {}
+// console.log(orders.size);  // 3
+// console.log(orders.has('Sushi'));  // true - имеется ли в множестве значение
+// console.log(orders.has('Pizza'));  // false
+// orders.add('Edamame'); // добавить значение в множество
+// orders.add('Edamame'); // не будет добавлено
+// console.log(orders); // {'Sushi, 'Ramen', 'Tempura', 'Edamame'}
+// orders.delete('Tempura');  // удаляет указанное значение
+// // orders.clear(); // полностью очистить множество
+// console.log(orders); // {'Sushi, 'Ramen', 'Edamame'}
 
+// Нельзя получить определенное значение из множества
+// так как оно является неупорядоченной последовательностью
+
+// Перебор значений множества с помощью цикла
 // for (const order of orders) {
 //   console.log(order);
 // }
 
-// // Remove duplicates
+// ## Удаляем дублирующие значения
 // const mealIngridients = [
 //   'Rice',
 //   'Pepper',
@@ -466,14 +475,16 @@ document.querySelector('button').addEventListener('click', function () {
 //   'Meat',
 //   'Garlic',
 // ];
-// console.log(new Set(mealIngridients).size);
+// console.log(new Set(mealIngridients).size);  // 4
 
-// console.log(new Set('allakhverdov yuriy').size);
+// console.log(new Set('allakhverdov yuriy').size); // 13
 
 // const mealIngridientsSet = new Set(mealIngridients);
-// console.log(mealIngridientsSet);
+// console.log(mealIngridientsSet); // {'Rice', 'Pepper', 'Garlic', 'Meat'}
+
+// Преобразование множества в массив
 // const mealIngridientsUnique = [...mealIngridientsSet];
-// console.log(mealIngridientsUnique);
+// console.log(mealIngridientsUnique);  // ['Rice', 'Pepper', 'Garlic', 'Meat']
 
 ////////////////////////////////////////////////
 // Task 2
