@@ -390,12 +390,19 @@ document.querySelector('button').addEventListener('click', function () {
 ////////////////////////////////////////////////
 // Map. Basics
 
+// Кортеж.
+
+// Синтаксис - new Map()
+// Метод .set() устанавливает значения
+
 // const restaurant = new Map();
-// restaurant.set('name', 'Bench');
+// restaurant.set('name', 'Bench'); // установка (ключ, значение)
 // restaurant.set(1, 'London, England');
 // restaurant.set(2, 'Paris, France');
 // console.log(restaurant.set(3, 'Kiev, Ukraine'));
+// Map(4) {'name' => 'Bench', 1 => 'London, England', 2 => 'Paris, France', 3 => 'Kiev, Ukraine'}
 
+// Можем заполнять кортеж по цепочке
 // restaurant
 //   .set('categories', ['Japanese', 'Sushi', 'Vegetarian', 'Organic'])
 //   .set('open', 10)
@@ -403,26 +410,28 @@ document.querySelector('button').addEventListener('click', function () {
 //   .set(true, 'Bench is open :)')
 //   .set(false, 'Bench is closed :(');
 
-// console.log(restaurant.get('name'));
-// console.log(restaurant.get(true));
-// console.log(restaurant.get(3));
+// Для того, чтобы считывать информацию из Map, существует метод .get()
+// В скобках пишется ключ
+// console.log(restaurant.get('name')); // Bench
+// console.log(restaurant.get(true)); // Bench is open :)
+// console.log(restaurant.get(3));  // Kiev, Ukraine
 
 // const currentTime = 11;
 // console.log(
 //   restaurant.get(
 //     currentTime > restaurant.get('open') &&
 //       currentTime < restaurant.get('close')
-//   )
+//   )  // Bench is open :)
 // );
 
-// console.log(restaurant.has(false));
-// console.log(restaurant.delete(1));
-// // restaurant.clear();
+// console.log(restaurant.has(false));  // проверка существования ключа - true
+// console.log(restaurant.delete(1)); // удаляет значение по ключу
+// // restaurant.clear(); // очистка Map
 // const arr = [1, 2, 3];
 // restaurant.set(arr, 'Hello!');
 // restaurant.set(document.querySelector('h2'), 'Heading');
 // console.log(restaurant);
-// console.log(restaurant.size);
+// console.log(restaurant.size);  // 8
 
 // console.log(restaurant.get(arr));
 
