@@ -159,3 +159,52 @@ for (let player of game.scored) {
   goalScorers[player] ? goalScorers[player]++ : (goalScorers[player] = 1);
 }
 console.log(goalScorers);
+
+//* Task 3
+console.log(`///Task 3///`);
+
+//? В Map ключи - это минуты, значения - события
+const events = new Map([
+  [19, 'Goal'],
+  [21, 'Substitution'],
+  [43, 'Goal'],
+  [56, 'Substitution'],
+  [69, 'Yellow card'],
+  [73, 'Substitution'],
+  [75, 'Yellow card'],
+  [79, 'Substitution'],
+  [81, 'Red card'],
+  [93, 'Goal'],
+]);
+
+//TODO Создать массив gameEvents с различными игровыми событиями,
+//TODO которые могут произойти (без дубликатов)
+const gameEvents = [...new Set(events.values())];
+console.log(gameEvents);
+
+//TODO После окончания игры выяснилось, что желтая карточка на 75-ой минуте
+//TODO была несправедливой. Поэтому удалите это событие из журнала игровых событий
+events.delete(75);
+console.log(events);
+
+//TODO Рассчитайте и запишите в консоль следующее:
+//TODO "В среднем событие происходило каждые 11 минут"
+//TODO (имейте в виду, что в игре 90 минут, которые нужно поделить на количество событий)
+console.log(`В среднем событие происходило каждые ${90 / events.size} минут`);
+
+//TODO Пройтись по Map events и вывести каждый элемент в консоль
+//TODO с пометкой в первой или второй половине игры произошло событие (после 45 минут):
+//TODO [FIRST HALF] 19:  Goal
+for (const [key, value] of events) {
+  let half;
+  if (key <= 45) {
+    half = 'FIRST';
+    console.log(`[${half} HALF] ${key}: ${value}`);
+  } else if (key > 45 && key <= 90){
+    half = 'SECOND';
+    console.log(`[${half} HALF] ${key}: ${value}`);
+  } else {
+    half = 'EXTRA';
+    console.log(`[${half} TIME] ${key}: ${value}`);
+  }
+}
