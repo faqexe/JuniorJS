@@ -349,6 +349,8 @@ document.querySelector('button').addEventListener('click', function () {
 ////////////////////////////////////////////////
 // Map. Iteration
 
+// Еще один способ создания Map
+
 // const question = new Map([
 //   ['question', 'What is the most popular programming language for front-end?'],
 //   [1, 'JavaScript'],
@@ -362,30 +364,39 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(question);
 
 // // Converting objects to maps
+// Преобразование объектов в Map
+
 // console.log(Object.entries(workingHours));
 // const workingHoursMap = new Map(Object.entries(workingHours));
 // console.log(workingHoursMap);
 
+// Перебор Map
 // // Quiz app
 // // console.log(question.get('question'));
 
+// Выводим ключ, значение, если ключ - это число
 // // for (const [key, value] of question) {
 // //   if (typeof key === 'number') {
 // //     console.log(`${key}: ${value}`);
 // //   }
 // // }
 
+// Получаем ответ от пользователя
 // // const userAnswer = Number(prompt('Choose the option number'));
 // // console.log(userAnswer);
 
+// Сравниваем ввод пользователя с правильным ответом
+// Ищем существует ли ключ (ответ пользователя) в Map и сравниваем его с правильным ответом
+// В зависимости от полученного булевого значения выводим итоговое сообщение по этому ключу
 // // console.log(question.get(question.get('correctAnswer') === userAnswer));
 
 // // Converting maps to arrays
+// Конвертация Map в массив
 // console.log([...question]);
 
 // // console.log(question.entries());
-// console.log([...question.keys()]);
-// console.log([...question.values()]);
+// console.log([...question.keys()]); // получение ключей в массив
+// console.log([...question.values()]); // получение значений в массив
 
 ////////////////////////////////////////////////
 // Map. Basics
