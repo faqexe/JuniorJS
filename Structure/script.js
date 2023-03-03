@@ -257,44 +257,59 @@ document.querySelector('button').addEventListener('click', function () {
 // checkLuggage('Camera, food, Gun for protection');  You are not allowed on board
 
 // // split() and join()
-// console.log('My+name+is+YouRa.'.split('+'));
-// console.log('YouRa Allakhverdov'.split(' '));
+// ## Разделить и присоединить
 
+// console.log('My+name+is+YouRa.'.split('+')); // ['My', 'name', 'is', 'YouRa.']
+// console.log('YouRa Allakhverdov'.split(' '));  // ['YouRa', 'Allakhverdov']
+
+// Использование деструктуризации
 // const [firstName, lastName] = 'YouRa Allakhverdov'.split(' ');
-// console.log(firstName, lastName);
+// console.log(firstName, lastName);  // получим слова в отдельных переменных
 
-// console.log(['Mr.', firstName, lastName.toUpperCase()].join(' '));
+// Получаем строку из массива
+// console.log(['Mr.', firstName, lastName.toUpperCase()].join(' ')); // Mr. YouRa ALLAKHVERDOV
 
+// Меняем первые буквы слов на заглавные
 // const capitalizeName = function (name) {
-//   const names = name.split(' ');
+//   const names = name.split(' '); // переводим строку в массив
 //   const namesCapitalized = [];
 //   for (const n of names) {
+        // использование slice
 //     // namesCapitalized.push(n[0].toUpperCase() + n.slice(1));
+      // использование push и replace
 //     namesCapitalized.push(n.replace(n[0], n[0].toUpperCase()));
 //   }
+// переводим массив в строку
 //   const capitalizedFullName = namesCapitalized.join(' ');
 //   return capitalizedFullName;
 // };
 
-// console.log(capitalizeName('youra allakhverdov'));
-// console.log(capitalizeName('jack white tiger jr.'));
+// console.log(capitalizeName('youra allakhverdov')); // Youra Allakhverdov
+// console.log(capitalizeName('jack white tiger jr.')); // Jack White Tiger Jr.
 
 // // Padding
+// ## Добавление отступов
+// В строку можно добавлять отступы, пока она не станет нужной нам длинны
+
 // const message = 'Hi there!';
 // console.log(message.padStart(27, '-').padEnd(37, '-'));
 
+// Маскировка первых цифр номера
 // const maskCreditCard = function (cardNumber) {
-//   const strCardNumber = cardNumber + '';
-//   const last4 = strCardNumber.slice(-4);
-//   return last4.padStart(strCardNumber.length, '*');
+  // const strCardNumber = cardNumber + ''; // получаем строку
+  // const last4 = strCardNumber.slice(-4); // выбираем последние 4 символа
+//     методом добавления отступа добавляем звездочки впереди 4 символов
+//     количество которых равно длине строки
+  // return last4.padStart(strCardNumber.length, '*');
 // };
 
-// console.log(maskCreditCard(1414312413591239515));
-// console.log(maskCreditCard('1251543661261363616146126'));
+// console.log(maskCreditCard(1414312413591239));  // ************1239
+// console.log(maskCreditCard(1111222233334444));  // ************4444
 
 // // repeat()
+// ## Повторяем строку несколько раз
 // const greeting = 'Hi!';
-// console.log(greeting.repeat(50));
+// console.log(greeting.repeat(50));  // 50 раз выведет сроку 'Hi!'
 
 // const howMuchYouLoveSomebody = function (loveNumber) {
 //   console.log(`I love you ${'❤️ '.repeat(loveNumber)}`);
