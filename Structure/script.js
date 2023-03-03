@@ -163,48 +163,72 @@ document.querySelector('button').addEventListener('click', function () {
 // console.log(airline.toUpperCase());  // Все буквы в верхний регистр
 
 // // Fix the passenger name
+// ## Исправляем имя
+
 // const passengerName = 'liNDa'; // Linda
+
+// Переводим все буквы в нижний регистр
 // const passengerNameLower = passengerName.toLowerCase();
-// console.log(passengerNameLower);
+// console.log(passengerNameLower); // linda
+
+// Делаем первую букву в верхнем регистре
+// Прибавляем ее к строке, начиная с 1 индекса
 // const passengerNameFixed =
 //   passengerNameLower[0].toUpperCase() + passengerNameLower.slice(1);
-// console.log(passengerNameFixed);
+// console.log(passengerNameFixed); // Linda
 
 // // Email validation
+// ## Валидация
+
 // const email = 'someemail@gmail.com';
 // const loginEmail = '  SomeEmail@Gmail.com \n';
 
+// Переводим все буквы в нижний регистр
 // const emailLower = loginEmail.toLowerCase();
-// const emailTrimmed = emailLower.trim();
-// console.log(emailTrimmed);
 
+// Обрезаем лишние пробелы и знаки методом trim
+// const emailTrimmed = emailLower.trim();
+// console.log(emailTrimmed); // someemail@gmail.com
+
+// Делаем в одну строку
 // const emailNormalized = loginEmail.toLowerCase().trim();
 // console.log(emailNormalized);
-// console.log(email === emailNormalized);
+// console.log(email === emailNormalized);  // true
 
 // // Replacing
+// ## Замена части строки
+
 // const ticketPriceEU = '197,23€';
+
+// Меняем запятую на точку и евро на доллар
 // const ticketPriceUS = ticketPriceEU.replace(',', '.').replace('€', '$');
-// console.log(ticketPriceUS);
+// console.log(ticketPriceUS);  // 197.23$
 
 // const announcement =
 //   'All passengers of flight EG234 come to boarding door 18. Boarding door 18!';
-// console.log(announcement.replace('door', 'gate'));
-// console.log(announcement.replaceAll('door', 'gate'));
+// console.log(announcement.replace('door', 'gate')); // заменит только первое попавшееся значение
+// console.log(announcement.replaceAll('door', 'gate'));  // меняем все попавшиеся значения
 
+// С использованием регулярного выражения
 // console.log(announcement.replace(/door/g, 'gate'));
 
 // // Methods return boolean
+// ## Возврат булевых значений
+
 // console.log(airplane);
-// console.log(airplane.includes('737'));
-// console.log(airplane.includes('738'));
 
-// console.log(airplane.startsWith('Boe'));
-// console.log(airplane.startsWith('Bt'));
-// console.log(airplane.startsWith('737'));
+// Содержит ли строка передаваемое значение
+// console.log(airplane.includes('737')); // true
+// console.log(airplane.includes('738')); // false
 
-// console.log(airplane.endsWith('737'));
-// console.log(airplane.endsWith('Boeing'));
+// Начинается ли строка с передаваемого значения
+// console.log(airplane.startsWith('Boe')); // true
+// console.log(airplane.startsWith('Bt'));  // false
+// console.log(airplane.startsWith('737')); // false
+
+// Заканчивается ли строка передаваемым значением
+// console.log(airplane.endsWith('737')); // true
+// console.log(airplane.endsWith('Boeing'));  // false
 
 // const airplane1 = 'Airbus';
 
@@ -217,6 +241,8 @@ document.querySelector('button').addEventListener('click', function () {
 // }
 
 // // Example
+// ## Позволено ли погрузить багаж
+
 // const checkLuggage = function (luggage) {
 //   const luggageLower = luggage.toLowerCase();
 //   if (luggageLower.includes('knife') || luggageLower.includes('gun')) {
@@ -226,9 +252,9 @@ document.querySelector('button').addEventListener('click', function () {
 //   }
 // };
 
-// checkLuggage('Food, jeans, socks and Swiss Knife');
-// checkLuggage('Laptop and food');
-// checkLuggage('Camera, food, Gun for protection');
+// checkLuggage('Food, jeans, socks and Swiss Knife');  // You are not allowed on board
+// checkLuggage('Laptop and food'); // Welcome to the board!
+// checkLuggage('Camera, food, Gun for protection');  You are not allowed on board
 
 // // split() and join()
 // console.log('My+name+is+YouRa.'.split('+'));
