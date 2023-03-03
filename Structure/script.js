@@ -101,34 +101,44 @@ document.querySelector('button').addEventListener('click', function () {
 
 ////////////////////////////////////////////////
 // Working with strings
+// Работа со строками
 
 // const airline = 'SkyUp Airline';
 // const airplane = 'Boeing 737';
 
-// console.log(airplane[0]);
-// console.log(airplane[1]);
-// console.log(airplane[2]);
-// console.log('SkyUp'[0]);
+// ##Получаем символ строки
 
-// console.log(airline.length);
-// console.log('Boeing 737'.length);
+// console.log(airplane[0]); // B
+// console.log(airplane[1]); // o
+// console.log(airplane[2]); // e
+// console.log('SkyUp'[0]); // S
 
-// console.log(airplane.indexOf(' '));
-// console.log(airplane.indexOf('7'));
-// console.log(airplane.lastIndexOf('7'));
-// console.log(airline.indexOf('up'));
+// ## Получаем длину строки
 
-// console.log(airplane.slice(7));
+// console.log(airline.length); // 5
+// console.log('Boeing 737'.length);  // 10
+
+// ## Методы строки
+
+// console.log(airplane.indexOf(' '));  // индекс пробела - 6
+// console.log(airplane.indexOf('7'));  // первый индекс значения - индекс 7 - 7
+// console.log(airplane.lastIndexOf('7'));  // последний индекс значения 7 - 9
+// console.log(airline.indexOf('Up'));  // с какого индекса начинается последовательность - 3
+
+// console.log(airplane.slice(7));  // с какого индекса и до конца строки - 737
 // console.log(airplane);
-// console.log(airplane.slice(0, 6));
-// console.log(airline.slice(0, airline.indexOf(' ')));
-// console.log(airplane.slice(airplane.lastIndexOf(' ') + 1));
+// console.log(airplane.slice(0, 6)); // с какого и до какого индекса - Boeing
+// console.log(airline.slice(0, airline.indexOf(' '))); // берет первое слово с начала строки до пробела - SkyUp
+// console.log(airplane.slice(airplane.lastIndexOf(' ') + 1)); // берет последнее слово до пробела - 737
 
-// console.log(airline.slice(-2));
-// console.log(airline.slice(2, -2));
+// console.log(airline.slice(-2));  // ne
+// console.log(airline.slice(2, -2)); // yUp Airli
 
+// ## Функция выводит в консоль номер места с указанием является ли оно посередине
 // const checkMiddleSeat = function (seat) {
 //   // B and E are middle seat
+// Извлекаем последний символ из строки
+// Проверяем является ли он B или E
 //   const seatLetter = seat.slice(-1);
 //   if (seatLetter === 'B' || seatLetter === 'E') {
 //     console.log('This is a middle seat.');
@@ -141,12 +151,16 @@ document.querySelector('button').addEventListener('click', function () {
 // checkMiddleSeat('7B');
 // checkMiddleSeat('14E');
 
+// ## Что происходит в JS когда вызывается метод для строки
+
+// Сначала строка конвертируется в объект
 // const x = new String('Hello');
 // console.log(typeof x);
+// Затем к объекту применяется метод
 // console.log(typeof x.slice(2));
 
-// console.log(airline.toLowerCase());
-// console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());  // Все буквы в нижний регистр
+// console.log(airline.toUpperCase());  // Все буквы в верхний регистр
 
 // // Fix the passenger name
 // const passengerName = 'liNDa'; // Linda
