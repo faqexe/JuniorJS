@@ -1,7 +1,7 @@
 'use strict';
 
 ///////////////////////////////////////////////////////////////
-// Default Parameters
+// Default Parameters - Параметры по умолчанию
 
 // const bookings = [];
 
@@ -31,6 +31,7 @@
 
 ///////////////////////////////////////////////////////////////
 // Passing arguments. Values vs Reference
+// Передача аргументов. Значения и Ссылки
 
 // const flightNumber = 'BV328';
 // const passenger1145 = {
@@ -78,7 +79,7 @@
 //   return [first.toUpperCase(), ...others].join(' ');
 // };
 
-// // Higher-Order Function
+// Higher-Order Function
 // const converter = function (str, func) {
 //   console.log(`The original text: ${str}`);
 //   console.log(`The converted text: ${func(str)}`);
@@ -89,7 +90,7 @@
 // converter('Hello to everyone!', upperFirstWord);
 // converter('Hello to everyone!', removeSpaces);
 
-// // Callback functions are very common in JS
+// Callback functions are very common in JS
 // const twice = num => console.log(num * 2);
 // [1, 2, 3].forEach(twice);
 
@@ -109,7 +110,7 @@
 
 // greet('Hey')('Lilu');
 
-// // greet() =>
+// greet() =>
 // const arrGreet = greetingText => name =>
 //   console.log(`${greetingText} ${name}!`);
 
@@ -155,24 +156,27 @@
 
 // const book = airline1.book;
 
-// // This doesn't work
-// // book(345, 'Linda Wilams');
+// This doesn't work
+// book(345, 'Linda Wilams');
 
-// // call()
+//* call()
 // book.call(airline2, 345, 'Linda Wilams');
 // console.log(airline2);
 
-// // book.call(airline1, 111, 'Bob Smith');
-// // console.log(airline1);
+// book.call(airline1, 111, 'Bob Smith');
+// console.log(airline1);
 
-// // // apply() - old approach
-// // const flightData = [111, 'Nick Wong'];
-// // // book.apply(airline2, flightData);
+//* apply() - old approach
+// const flightData = [111, 'Nick Wong'];
+// book.apply(airline2, flightData);
 
-// // book.call(airline2, ...flightData);
-// // console.log(airline2);
+// book.call(airline2, ...flightData);
+// console.log(airline2);
 
-// // Метод bind()
+//* Метод bind()
+// В отличии от call не вызывает сразу функцию, а возвращает новую
+// где уже связывается ключевое слово this
+
 // const bookAirline2 = book.bind(airline2);
 // bookAirline2(45, 'John Doe');
 // console.log(airline2);
@@ -191,7 +195,7 @@
 // bookAirline3Flight21('Jack Smith');
 // bookAirline3Flight21('Lana Del Ray');
 
-// // bind() with event listeners
+//* bind() with event listeners
 // airline1.airplanes = 200;
 // airline1.purchaseAirplane = function () {
 //   console.log(this);
@@ -205,7 +209,9 @@
 //   .querySelector('#purchase')
 //   .addEventListener('click', airline1.purchaseAirplane.bind(airline1));
 
-// // Partial application
+// Partial application
+// Частичное приложение/применение
+
 // const getPercentage = (totalValue, value) => (value / totalValue) * 100;
 // console.log(getPercentage(20, 23789));
 // const getPercentage23789 = getPercentage.bind(null, 23789);
