@@ -302,6 +302,7 @@
 
 ///////////////////////////////////////////////////////////////
 // Immediately Invoked Function Expression (IIFE)
+// Немедленно вызываемая функция
 
 // const runOneTime = function () {
 //   console.log('You will never see this function call again.');
